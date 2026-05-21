@@ -4,7 +4,9 @@ go 1.26
 
 require (
 	github.com/gruntwork-io/go-commons v0.12.4
+	github.com/james00012/terratest/modules/files/v2 v2.0.0
 	github.com/james00012/terratest/modules/random/v2 v2.0.0
+	github.com/james00012/terratest/modules/shell/v2 v2.0.0
 	github.com/james00012/terratest/modules/testing/v2 v2.0.0
 	github.com/jstemmer/go-junit-report v1.0.0
 	github.com/sirupsen/logrus v1.9.3
@@ -28,3 +30,5 @@ replace github.com/james00012/terratest/modules/testing/v2 => ../testing
 replace github.com/james00012/terratest/modules/random/v2 => ../random
 
 replace github.com/james00012/terratest/modules/files/v2 => ../files
+
+replace github.com/james00012/terratest/modules/shell/v2 => ../shell
