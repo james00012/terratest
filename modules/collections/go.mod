@@ -1,4 +1,4 @@
-module github.com/gruntwork-io/terratest/modules/collections/v2
+module github.com/james00012/terratest/modules/collections/v2
 
 go 1.26
 
