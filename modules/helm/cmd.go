@@ -5,7 +5,7 @@ import (
 	"slices"
 
 	"github.com/gruntwork-io/terratest/modules/shell"
-	"github.com/gruntwork-io/terratest/modules/testing"
+	"github.com/gruntwork-io/terratest/modules/testing/v2"
 )
 
 // getCommonArgs extracts common helm options. In this case, these are:

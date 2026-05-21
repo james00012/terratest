@@ -11,7 +11,7 @@ import (
 	"golang.org/x/sync/singleflight"
 
 	"github.com/gruntwork-io/terratest/modules/logger"
-	"github.com/gruntwork-io/terratest/modules/testing"
+	"github.com/gruntwork-io/terratest/modules/testing/v2"
 )
 
 var (

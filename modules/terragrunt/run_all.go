@@ -3,7 +3,7 @@ package terragrunt
 import (
 	"context"
 
-	"github.com/gruntwork-io/terratest/modules/testing"
+	"github.com/gruntwork-io/terratest/modules/testing/v2"
 )
 
 // RunAllContext runs terragrunt run --all -- <command> with the given options and returns stdout/stderr.

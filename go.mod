@@ -18,7 +18,7 @@ require (
 	github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a
 	github.com/jstemmer/go-junit-report v1.0.0
 	github.com/magiconair/properties v1.8.7
-	github.com/mattn/go-zglob v0.0.2-0.20190814121620-e3c945676326
+	github.com/mattn/go-zglob v0.0.6
 	github.com/miekg/dns v1.1.62
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/oracle/oci-go-sdk v7.1.0+incompatible
@@ -172,6 +172,11 @@ require (
 	github.com/googleapis/enterprise-certificate-proxy v0.3.14 // indirect
 	github.com/googleapis/gax-go/v2 v2.21.0 // indirect
 	github.com/gorilla/websocket v1.5.4-0.20250319132907-e064f32e3674 // indirect
+	github.com/gruntwork-io/terratest/modules/collections/v2 v2.0.0
+	github.com/gruntwork-io/terratest/modules/environment/v2 v2.0.0
+	github.com/gruntwork-io/terratest/modules/files/v2 v2.0.0
+	github.com/gruntwork-io/terratest/modules/random/v2 v2.0.0
+	github.com/gruntwork-io/terratest/modules/testing/v2 v2.0.0
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-safetemp v1.0.0 // indirect
@@ -243,3 +248,13 @@ require (
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
+
+replace github.com/gruntwork-io/terratest/modules/collections/v2 => ./modules/collections
+
+replace github.com/gruntwork-io/terratest/modules/random/v2 => ./modules/random
+
+replace github.com/gruntwork-io/terratest/modules/files/v2 => ./modules/files
+
+replace github.com/gruntwork-io/terratest/modules/testing/v2 => ./modules/testing
+
+replace github.com/gruntwork-io/terratest/modules/environment/v2 => ./modules/environment

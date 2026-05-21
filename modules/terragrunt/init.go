@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/gruntwork-io/terratest/internal/lib/formatting"
-	"github.com/gruntwork-io/terratest/modules/testing"
+	"github.com/gruntwork-io/terratest/modules/testing/v2"
 	"github.com/stretchr/testify/require"
 )
 

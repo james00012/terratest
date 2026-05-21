@@ -20,7 +20,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/helm"
 	"github.com/gruntwork-io/terratest/modules/k8s"
 	"github.com/gruntwork-io/terratest/modules/logger"
-	"github.com/gruntwork-io/terratest/modules/random"
+	"github.com/gruntwork-io/terratest/modules/random/v2"
 )
 
 // This file contains an example of how to use terratest to test *remote* helm chart template logic by rendering the templates

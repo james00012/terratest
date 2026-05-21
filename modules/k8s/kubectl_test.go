@@ -19,7 +19,7 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/k8s"
 
-	"github.com/gruntwork-io/terratest/modules/random"
+	"github.com/gruntwork-io/terratest/modules/random/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

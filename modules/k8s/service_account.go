@@ -14,7 +14,7 @@ import (
 	"k8s.io/client-go/tools/clientcmd/api"
 
 	"github.com/gruntwork-io/terratest/modules/retry"
-	"github.com/gruntwork-io/terratest/modules/testing"
+	"github.com/gruntwork-io/terratest/modules/testing/v2"
 )
 
 const (

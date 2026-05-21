@@ -3,7 +3,7 @@ package terraform
 import (
 	"context"
 
-	"github.com/gruntwork-io/terratest/modules/testing"
+	"github.com/gruntwork-io/terratest/modules/testing/v2"
 )
 
 // Get calls terraform get and return stdout/stderr.

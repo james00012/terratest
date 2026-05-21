@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 
 	"github.com/gruntwork-io/terratest/modules/logger"
-	"github.com/gruntwork-io/terratest/modules/testing"
+	"github.com/gruntwork-io/terratest/modules/testing/v2"
 )
 
 // RunDummyServerContext runs a dummy HTTP server on a unique port that will return the given text. Returns the Listener

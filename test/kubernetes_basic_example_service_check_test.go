@@ -20,7 +20,7 @@ import (
 
 	http_helper "github.com/gruntwork-io/terratest/modules/http-helper"
 	"github.com/gruntwork-io/terratest/modules/k8s"
-	"github.com/gruntwork-io/terratest/modules/random"
+	"github.com/gruntwork-io/terratest/modules/random/v2"
 )
 
 // An example of how to do more expanded verification of the Kubernetes resource config in examples/kubernetes-basic-example using Terratest.

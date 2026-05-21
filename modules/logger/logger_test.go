@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/logger"
-	tftesting "github.com/gruntwork-io/terratest/modules/testing"
+	tftesting "github.com/gruntwork-io/terratest/modules/testing/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
