@@ -11,7 +11,7 @@ import (
 	gotesting "testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/testing/v2"
+	"github.com/james00012/terratest/modules/testing/v2"
 )
 
 const (
