@@ -3,8 +3,8 @@ package aws_test
 import (
 	"testing"
 
-	terraaws "github.com/gruntwork-io/terratest/modules/aws"
-	"github.com/gruntwork-io/terratest/modules/logger"
+	terraaws "github.com/gruntwork-io/terratest/modules/aws/v2"
+	"github.com/gruntwork-io/terratest/modules/logger/v2"
 	"github.com/gruntwork-io/terratest/modules/random/v2"
 	"github.com/stretchr/testify/assert"
 )

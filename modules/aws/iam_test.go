@@ -7,7 +7,7 @@ import (
 
 	awsSDK "github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
-	aws "github.com/gruntwork-io/terratest/modules/aws"
+	aws "github.com/gruntwork-io/terratest/modules/aws/v2"
 	"github.com/gruntwork-io/terratest/modules/random/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
