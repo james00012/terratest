@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/shell"
+	"github.com/gruntwork-io/terratest/modules/shell/v2"
 	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
 )
 

@@ -13,7 +13,7 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
 	"github.com/gruntwork-io/terratest/modules/core/v2/random"
-	"github.com/gruntwork-io/terratest/modules/shell"
+	"github.com/gruntwork-io/terratest/modules/shell/v2"
 )
 
 func TestRunCommandAndGetOutput(t *testing.T) {

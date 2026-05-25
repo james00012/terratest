@@ -18,8 +18,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	http_helper "github.com/gruntwork-io/terratest/modules/http-helper"
-	"github.com/gruntwork-io/terratest/modules/k8s"
+	http_helper "github.com/gruntwork-io/terratest/modules/http-helper/v2"
+	"github.com/gruntwork-io/terratest/modules/k8s/v2"
 	"github.com/gruntwork-io/terratest/modules/core/v2/random"
 )
 

@@ -11,7 +11,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/core/v2/environment"
 	"github.com/gruntwork-io/terratest/modules/core/v2/random"
 	"github.com/gruntwork-io/terratest/modules/core/v2/retry"
-	terratestslack "github.com/gruntwork-io/terratest/modules/slack"
+	terratestslack "github.com/gruntwork-io/terratest/modules/slack/v2"
 )
 
 const (

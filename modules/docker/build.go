@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/shell"
+	"github.com/gruntwork-io/terratest/modules/shell/v2"
 	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
 	"github.com/hashicorp/go-multierror"
 	"github.com/stretchr/testify/require"
