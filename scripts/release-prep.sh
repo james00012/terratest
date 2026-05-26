@@ -37,13 +37,20 @@ for gomod in modules/*/go.mod cmd/*/go.mod; do
 done
 
 echo "==> Tidying each submodule (GOWORK=off)..."
+tidy_failures=()
 for d in modules/*/ cmd/*/; do
   [ -f "$d/go.mod" ] || continue
   echo "    $d"
-  (cd "$d" && GOWORK=off go mod tidy >/dev/null 2>&1) || {
-    echo "::warning::tidy failed in $d (may need manual review)"
-  }
+  if ! (cd "$d" && GOWORK=off go mod tidy >/dev/null 2>&1); then
+    tidy_failures+=("$d")
+  fi
 done
+if [ "${#tidy_failures[@]}" -gt 0 ]; then
+  echo "::error::go mod tidy failed in:" >&2
+  printf '    %s\n' "${tidy_failures[@]}" >&2
+  echo "::error::Fix each module then re-run release-prep." >&2
+  exit 1
+fi
 
 echo "==> Verifying no-replaces guard..."
 bash scripts/check-no-replaces.sh

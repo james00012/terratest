@@ -20,6 +20,10 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Run go mod tidy in each module
+      env:
+        # Force release-form resolution so tidy sees what external consumers see,
+        # not the workspace overlay. Catches cross-submodule require/replace drift.
+        GOWORK: 'off'
       run: |
         set -e
         find . -name go.mod -not -path '*/vendor/*' -print0 \

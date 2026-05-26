@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# check-acyclic-deps.sh — fails CI if any submodule imports a module from a strictly
-# higher tier. Enforces the v2 layering rule: core → helpers → tooling → platforms → IaC.
+# check-acyclic-deps.sh — fails CI if any submodule's production code imports a
+# module from a strictly higher tier. Enforces the v2 layering rule:
+# core → helpers → tooling → platforms → IaC, downward-only.
 #
-# Test-only imports (inside _test.go in an external test package) are NOT scanned here;
-# they may form module-level cycles per the RFC. Production imports must be acyclic
-# and downward-only.
+# Test files (*_test.go) are excluded; cross-module test-only imports are allowed
+# (e.g. modules/core/logger/parser_test imports modules/shell/v2 — legal per the
+# RFC's external _test package rule).
 
-set -euo pipefail
+set -uo pipefail
 
-# Tier assignment. Lower tier number = lower layer. Anything missing is treated
-# as tier 99 (top) so unrelated paths don't trip the check.
+# Tier assignment. Lower number = lower layer.
 declare -A TIER=(
   [core]=0
   [shell]=1
@@ -39,18 +39,19 @@ for dir in modules/*/; do
   importer=$(basename "$dir")
   importer_tier="${TIER[$importer]:-99}"
 
-  # Production .go files only (exclude _test.go)
-  while IFS= read -r line; do
-    [ -z "$line" ] && continue
-    importee=$(echo "$line" | sed -E 's|.*"github.com/gruntwork-io/terratest/modules/([^/"]+).*|\1|')
-    importee_tier="${TIER[$importee]:-99}"
-    if [ "$importee_tier" -gt "$importer_tier" ]; then
-      echo "::error file=${dir}::tier violation — $importer (tier $importer_tier) imports $importee (tier $importee_tier)"
-      fail=1
-    fi
-  done < <(grep -rh '"github.com/gruntwork-io/terratest/modules/' "${dir}"*.go 2>/dev/null \
-    | grep -v '_test\.go:' \
-    | sort -u)
+  # Scan all .go files in the submodule recursively, excluding test files.
+  while IFS= read -r gofile; do
+    while IFS= read -r importee; do
+      [ -z "$importee" ] && continue
+      importee_tier="${TIER[$importee]:-99}"
+      if [ "$importee_tier" -gt "$importer_tier" ]; then
+        echo "::error file=${gofile}::tier violation — $importer (tier $importer_tier) imports $importee (tier $importee_tier)"
+        fail=1
+      fi
+    done < <(grep -oE '"github\.com/gruntwork-io/terratest/modules/[a-z][a-z-]*' "$gofile" 2>/dev/null \
+      | awk -F'/' '{print $NF}' \
+      | sort -u)
+  done < <(find "$dir" -name '*.go' -not -name '*_test.go' 2>/dev/null)
 done
 
 if [ "$fail" -ne 0 ]; then
