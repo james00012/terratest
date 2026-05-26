@@ -48,7 +48,7 @@ for dir in modules/*/; do
         echo "::error file=${gofile}::tier violation — $importer (tier $importer_tier) imports $importee (tier $importee_tier)"
         fail=1
       fi
-    done < <(grep -oE '"github\.com/gruntwork-io/terratest/modules/[a-z][a-z-]*' "$gofile" 2>/dev/null \
+    done < <(grep -oE '"github\.com/gruntwork-io/terratest/modules/[a-z][a-z0-9-]*' "$gofile" 2>/dev/null \
       | awk -F'/' '{print $NF}' \
       | sort -u)
   done < <(find "$dir" -name '*.go' -not -name '*_test.go' 2>/dev/null)
