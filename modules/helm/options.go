@@ -1,8 +1,8 @@
 package helm
 
 import (
-	"github.com/gruntwork-io/terratest/modules/k8s/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/k8s/v2"
+	"github.com/james00012/terratest/modules/core/v2/logger"
 )
 
 // Options represents the options for a Helm command.

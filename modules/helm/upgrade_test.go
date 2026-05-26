@@ -19,10 +19,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/helm/v2"
-	http_helper "github.com/gruntwork-io/terratest/modules/http-helper/v2"
-	"github.com/gruntwork-io/terratest/modules/k8s/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/helm/v2"
+	http_helper "github.com/james00012/terratest/modules/http-helper/v2"
+	"github.com/james00012/terratest/modules/k8s/v2"
+	"github.com/james00012/terratest/modules/core/v2/random"
 )
 
 // Test that we can install, upgrade, and rollback a remote chart (e.g stable/chartmuseum)

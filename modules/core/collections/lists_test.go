@@ -4,7 +4,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/collections"
+	"github.com/james00012/terratest/modules/core/v2/collections"
 	"github.com/stretchr/testify/assert"
 )
 

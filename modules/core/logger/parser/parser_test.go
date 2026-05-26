@@ -3,7 +3,7 @@ package parser_test
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger/parser"
+	"github.com/james00012/terratest/modules/core/v2/logger/parser"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -252,7 +252,7 @@ func TestIsSummaryLine(t *testing.T) {
 	}{
 		{
 			name: "BaseCase",
-			in:   "ok  	github.com/gruntwork-io/terratest/test	812.034s",
+			in:   "ok  	github.com/james00012/terratest/test	812.034s",
 			out:  true,
 		},
 		{

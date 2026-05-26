@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gruntwork-io/terratest/internal/lib/formatting"
+	"github.com/james00012/terratest/internal/lib/formatting"
 )
 
 // TerraformCommandsWithLockSupport is a list of all the Terraform commands that

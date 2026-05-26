@@ -15,13 +15,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/k8s/v2"
+	"github.com/james00012/terratest/modules/k8s/v2"
 
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/core/v2/random"
 )
 
 func TestListPodsReturnsPodsInNamespace(t *testing.T) {

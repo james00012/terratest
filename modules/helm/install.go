@@ -7,8 +7,8 @@ import (
 	"github.com/gruntwork-io/go-commons/errors"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/files"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/files"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 )
 
 // Install will install the selected helm chart with the provided options under the given release name. This will fail

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/opa/v2"
+	"github.com/james00012/terratest/modules/opa/v2"
 )
 
 func TestFormatOPAEvalArgs(t *testing.T) {

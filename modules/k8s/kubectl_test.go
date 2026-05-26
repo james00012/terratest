@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/k8s/v2"
+	"github.com/james00012/terratest/modules/k8s/v2"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/core/v2/random"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

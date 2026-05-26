@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/gruntwork-io/go-commons/files"
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger/parser"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/core/v2/logger/parser"
+	"github.com/james00012/terratest/modules/core/v2/random"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

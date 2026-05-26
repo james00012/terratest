@@ -7,8 +7,8 @@ import (
 	"slices"
 	"strconv"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 	"golang.org/x/crypto/ssh"
 )
 

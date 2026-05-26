@@ -10,8 +10,8 @@ import (
 	getter "github.com/hashicorp/go-getter/v2"
 	"golang.org/x/sync/singleflight"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 )
 
 var (
@@ -28,13 +28,13 @@ var (
 // across calls.
 // For example, if you call DownloadPolicyE with the go-getter URL multiple times:
 //
-//	git::https://github.com/gruntwork-io/terratest.git//policies/foo.rego?ref=main
+//	git::https://github.com/james00012/terratest.git//policies/foo.rego?ref=main
 //
 // The first time the gruntwork-io/terratest repo will be downloaded to a new temp directory. All subsequent calls will
 // reuse that first temporary dir where the repo was cloned. This is preserved even if a different subdir is requested
-// later, e.g.: git::https://github.com/gruntwork-io/terratest.git//examples/bar.rego?ref=main
+// later, e.g.: git::https://github.com/james00012/terratest.git//examples/bar.rego?ref=main
 // Note that the query parameters are always included in the base URL. This means that if you use a different ref (e.g.,
-// git::https://github.com/gruntwork-io/terratest.git//examples/bar.rego?ref=v0.39.3), then that will be cloned to a new
+// git::https://github.com/james00012/terratest.git//examples/bar.rego?ref=v0.39.3), then that will be cloned to a new
 // temporary directory rather than the cached dir.
 func DownloadPolicyE(t testing.TestingT, rulePath string) (string, error) {
 	cwd, err := os.Getwd()

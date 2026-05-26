@@ -8,8 +8,8 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/ecr"
 	"github.com/aws/aws-sdk-go-v2/service/ecr/types"
 	"github.com/gruntwork-io/go-commons/errors"
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 	"github.com/stretchr/testify/require"
 )
 
@@ -74,7 +74,7 @@ func GetECRRepoContextE(t testing.TestingT, ctx context.Context, region string, 
 	}
 
 	if len(resp.Repositories) != 1 {
-		return nil, errors.WithStackTrace(goerrors.New("an unexpected condition occurred. Please file an issue at github.com/gruntwork-io/terratest"))
+		return nil, errors.WithStackTrace(goerrors.New("an unexpected condition occurred. Please file an issue at github.com/james00012/terratest"))
 	}
 
 	return &resp.Repositories[0], nil

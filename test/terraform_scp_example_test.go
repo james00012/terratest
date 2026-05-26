@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/aws/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
-	"github.com/gruntwork-io/terratest/modules/core/v2/retry"
-	"github.com/gruntwork-io/terratest/modules/ssh/v2"
-	"github.com/gruntwork-io/terratest/modules/terraform/v2"
-	test_structure "github.com/gruntwork-io/terratest/modules/test-structure/v2"
+	"github.com/james00012/terratest/modules/aws/v2"
+	"github.com/james00012/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/core/v2/retry"
+	"github.com/james00012/terratest/modules/ssh/v2"
+	"github.com/james00012/terratest/modules/terraform/v2"
+	test_structure "github.com/james00012/terratest/modules/test-structure/v2"
 	"github.com/stretchr/testify/assert"
 )
 

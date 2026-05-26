@@ -3,8 +3,8 @@ package test_test
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/opa/v2"
-	"github.com/gruntwork-io/terratest/modules/terraform/v2"
+	"github.com/james00012/terratest/modules/opa/v2"
+	"github.com/james00012/terratest/modules/terraform/v2"
 	"github.com/stretchr/testify/require"
 )
 
@@ -64,7 +64,7 @@ func TestOPAEvalTerraformModuleRemotePolicy(t *testing.T) {
 	opaOpts := &opa.EvalOptions{
 		// This test fetches the policy from the main branch of the terratest repository.
 		// The policy uses OPA v1.0+ compatible syntax.
-		RulePath: "git::https://github.com/gruntwork-io/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=main",
+		RulePath: "git::https://github.com/james00012/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=main",
 		FailMode: opa.FailUndefined,
 	}
 

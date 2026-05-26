@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/files"
-	"github.com/gruntwork-io/terratest/modules/core/v2/git"
-	"github.com/gruntwork-io/terratest/modules/opa/v2"
+	"github.com/james00012/terratest/modules/core/v2/files"
+	"github.com/james00012/terratest/modules/core/v2/git"
+	"github.com/james00012/terratest/modules/opa/v2"
 )
 
 // TestDownloadPolicyReturnsLocalPath makes sure the DownloadPolicyE function returns a local path without processing it.
@@ -31,9 +31,9 @@ func TestDownloadPolicyDownloadsRemote(t *testing.T) {
 	t.Parallel()
 
 	curRef := git.GetCurrentGitRefContext(t, t.Context(), "")
-	baseDir := "git::https://github.com/gruntwork-io/terratest.git?ref=" + curRef
+	baseDir := "git::https://github.com/james00012/terratest.git?ref=" + curRef
 	localPath := "../../examples/terraform-opa-example/policy/enforce_source.rego"
-	remotePath := "git::https://github.com/gruntwork-io/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=" + curRef
+	remotePath := "git::https://github.com/james00012/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=" + curRef
 
 	// Make sure we clean up the downloaded file, while simultaneously asserting that the download dir was stored in the
 	// cache.
@@ -70,8 +70,8 @@ func TestDownloadPolicyDownloadsRemote(t *testing.T) {
 //
 //nolint:paralleltest // go-getter's Client.configure has an internal race on its global Getters map, so we cannot run alongside other go-getter tests.
 func TestDownloadPolicyDeduplicatesConcurrentDownloads(t *testing.T) {
-	baseDir := "git::https://github.com/gruntwork-io/terratest.git?ref=v0.50.0"
-	remotePath := "git::https://github.com/gruntwork-io/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=v0.50.0"
+	baseDir := "git::https://github.com/james00012/terratest.git?ref=v0.50.0"
+	remotePath := "git::https://github.com/james00012/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=v0.50.0"
 
 	defer func() {
 		if cached, ok := opa.PolicyDirCache.Load(baseDir); ok {
@@ -126,9 +126,9 @@ func TestDownloadPolicyDeduplicatesConcurrentDownloads(t *testing.T) {
 func TestDownloadPolicyReusesCachedDir(t *testing.T) {
 	t.Parallel()
 
-	baseDir := "git::https://github.com/gruntwork-io/terratest.git?ref=main"
-	remotePath := "git::https://github.com/gruntwork-io/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=main"
-	remotePathAltSubPath := "git::https://github.com/gruntwork-io/terratest.git//modules/opa/eval.go?ref=main"
+	baseDir := "git::https://github.com/james00012/terratest.git?ref=main"
+	remotePath := "git::https://github.com/james00012/terratest.git//examples/terraform-opa-example/policy/enforce_source.rego?ref=main"
+	remotePathAltSubPath := "git::https://github.com/james00012/terratest.git//modules/opa/eval.go?ref=main"
 
 	// Make sure we clean up the downloaded file, while simultaneously asserting that the download dir was stored in the
 	// cache.

@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/docker/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
-	"github.com/gruntwork-io/terratest/modules/shell/v2"
+	"github.com/james00012/terratest/modules/docker/v2"
+	"github.com/james00012/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/shell/v2"
 	"github.com/stretchr/testify/require"
 )
 

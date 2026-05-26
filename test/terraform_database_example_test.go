@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/database/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/retry"
-	"github.com/gruntwork-io/terratest/modules/terraform/v2"
+	"github.com/james00012/terratest/modules/database/v2"
+	"github.com/james00012/terratest/modules/core/v2/retry"
+	"github.com/james00012/terratest/modules/terraform/v2"
 )
 
 func TestTerraformDatabaseExample(t *testing.T) {

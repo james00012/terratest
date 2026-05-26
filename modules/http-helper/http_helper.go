@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/core/v2/retry"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/core/v2/retry"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 )
 
 // defaultTimeoutSeconds is the default timeout in seconds for HTTP requests.

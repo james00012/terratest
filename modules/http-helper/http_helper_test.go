@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	httphelper "github.com/gruntwork-io/terratest/modules/http-helper/v2"
+	httphelper "github.com/james00012/terratest/modules/http-helper/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

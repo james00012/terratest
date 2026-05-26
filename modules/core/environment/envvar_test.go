@@ -3,7 +3,7 @@ package environment_test
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/environment"
+	"github.com/james00012/terratest/modules/core/v2/environment"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -12,12 +12,12 @@ package k8s_test
 import (
 	"fmt"
 
-	"github.com/gruntwork-io/terratest/modules/k8s/v2"
+	"github.com/james00012/terratest/modules/k8s/v2"
 
 	"strings"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/core/v2/random"
 	"github.com/stretchr/testify/require"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

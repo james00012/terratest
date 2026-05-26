@@ -3,8 +3,8 @@ package test_test
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/opa/v2"
-	"github.com/gruntwork-io/terratest/modules/terraform/v2"
+	"github.com/james00012/terratest/modules/opa/v2"
+	"github.com/james00012/terratest/modules/terraform/v2"
 )
 
 // TestOPAEvalTerraformModuleWithExtraArgs demonstrates how to pass extra command line arguments to OPA,

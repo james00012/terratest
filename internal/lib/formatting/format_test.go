@@ -3,7 +3,7 @@ package formatting_test
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/internal/lib/formatting"
+	"github.com/james00012/terratest/internal/lib/formatting"
 	"github.com/stretchr/testify/assert"
 )
 

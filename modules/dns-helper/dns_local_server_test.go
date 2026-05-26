@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	dnshelper "github.com/gruntwork-io/terratest/modules/dns-helper/v2"
+	dnshelper "github.com/james00012/terratest/modules/dns-helper/v2"
 	"github.com/miekg/dns"
 )
 

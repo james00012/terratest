@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 
 	"github.com/gruntwork-io/go-commons/errors"
-	"github.com/gruntwork-io/terratest/modules/core/v2/files"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/files"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 	"github.com/stretchr/testify/require"
 )
 

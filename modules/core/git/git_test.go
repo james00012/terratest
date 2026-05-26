@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/git"
+	"github.com/james00012/terratest/modules/core/v2/git"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -18,7 +18,7 @@ func TestGitRefChecks(t *testing.T) {
 	tmpdir := t.TempDir()
 	gitWorkDir := filepath.Join(tmpdir, "terratest")
 
-	url := "https://github.com/gruntwork-io/terratest.git"
+	url := "https://github.com/james00012/terratest.git"
 	err := exec.CommandContext(t.Context(), "git", "clone", url, gitWorkDir).Run()
 	require.NoError(t, err)
 

@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/shell/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/shell/v2"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 )
 
 // RunKubectlContext calls kubectl using the provided context, options, and args, failing the test on error.

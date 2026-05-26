@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/docker/v2"
-	http_helper "github.com/gruntwork-io/terratest/modules/http-helper/v2"
-	"github.com/gruntwork-io/terratest/modules/packer/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/docker/v2"
+	http_helper "github.com/james00012/terratest/modules/http-helper/v2"
+	"github.com/james00012/terratest/modules/packer/v2"
+	"github.com/james00012/terratest/modules/core/v2/random"
 )
 
 // An example of how to test the Packer template in examples/packer-docker-example completely locally using Terratest

@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/collections"
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/collections"
+	"github.com/james00012/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/api/compute/v1"
 )

@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/retry"
+	"github.com/james00012/terratest/modules/core/v2/retry"
 )
 
 func TestDoWithRetry(t *testing.T) {

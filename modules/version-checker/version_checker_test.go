@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	checker "github.com/gruntwork-io/terratest/modules/version-checker/v2"
+	checker "github.com/james00012/terratest/modules/version-checker/v2"
 	"github.com/stretchr/testify/require"
 )
 

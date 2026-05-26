@@ -4,10 +4,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/docker/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/git"
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/docker/v2"
+	"github.com/james00012/terratest/modules/core/v2/git"
+	"github.com/james00012/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/core/v2/random"
 	"github.com/stretchr/testify/require"
 )
 

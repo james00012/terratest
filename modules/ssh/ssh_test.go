@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/ssh/v2"
-	grunttest "github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/ssh/v2"
+	grunttest "github.com/james00012/terratest/modules/core/v2/testing"
 	"github.com/stretchr/testify/assert"
 )
 

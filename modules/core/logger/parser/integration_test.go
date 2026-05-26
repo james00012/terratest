@@ -10,9 +10,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/files"
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger/parser"
-	"github.com/gruntwork-io/terratest/modules/shell/v2"
+	"github.com/james00012/terratest/modules/core/v2/files"
+	"github.com/james00012/terratest/modules/core/v2/logger/parser"
+	"github.com/james00012/terratest/modules/shell/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

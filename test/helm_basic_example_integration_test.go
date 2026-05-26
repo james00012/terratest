@@ -18,10 +18,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/terratest/modules/helm/v2"
-	http_helper "github.com/gruntwork-io/terratest/modules/http-helper/v2"
-	"github.com/gruntwork-io/terratest/modules/k8s/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/random"
+	"github.com/james00012/terratest/modules/helm/v2"
+	http_helper "github.com/james00012/terratest/modules/http-helper/v2"
+	"github.com/james00012/terratest/modules/k8s/v2"
+	"github.com/james00012/terratest/modules/core/v2/random"
 )
 
 // This file contains examples of how to use terratest to test helm charts by deploying the chart and verifying the

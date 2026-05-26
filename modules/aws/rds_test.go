@@ -3,7 +3,7 @@ package aws_test
 import (
 	"testing"
 
-	aws "github.com/gruntwork-io/terratest/modules/aws/v2"
+	aws "github.com/james00012/terratest/modules/aws/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

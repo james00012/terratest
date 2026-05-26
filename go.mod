@@ -1,4 +1,4 @@
-module github.com/gruntwork-io/terratest
+module github.com/james00012/terratest
 
 go 1.26
 
@@ -60,6 +60,6 @@ require (
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
 
-require github.com/gruntwork-io/terratest/modules/core/v2 v2.0.0
+require github.com/james00012/terratest/modules/core/v2 v2.0.0
 
-replace github.com/gruntwork-io/terratest/modules/core/v2 => ./modules/core
+replace github.com/james00012/terratest/modules/core/v2 => ./modules/core

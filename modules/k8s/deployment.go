@@ -10,8 +10,8 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/retry"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/retry"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 )
 
 // ListDeploymentsContextE looks up deployments in the given namespace that match the given filters and return them.

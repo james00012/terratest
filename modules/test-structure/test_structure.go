@@ -17,15 +17,15 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/git"
+	"github.com/james00012/terratest/modules/core/v2/git"
 
 	go_test "testing"
 
-	"github.com/gruntwork-io/terratest/modules/core/v2/files"
-	"github.com/gruntwork-io/terratest/modules/core/v2/logger"
-	"github.com/gruntwork-io/terratest/modules/opa/v2"
-	"github.com/gruntwork-io/terratest/modules/terraform/v2"
-	"github.com/gruntwork-io/terratest/modules/core/v2/testing"
+	"github.com/james00012/terratest/modules/core/v2/files"
+	"github.com/james00012/terratest/modules/core/v2/logger"
+	"github.com/james00012/terratest/modules/opa/v2"
+	"github.com/james00012/terratest/modules/terraform/v2"
+	"github.com/james00012/terratest/modules/core/v2/testing"
 	"github.com/stretchr/testify/require"
 )
 
