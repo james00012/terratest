@@ -1,63 +1,32 @@
 #!/usr/bin/env bash
-# check-single-source.sh — fails CI if two different submodules' declared module
-# paths overlap, which would cause Go's loader to see ambiguous packages.
-#
-# The "ambiguous import" class of bug occurs when two go.mod files declare module
-# paths where one is a prefix of the other (e.g. github.com/foo/bar and
-# github.com/foo/bar/baz). Go cannot tell which module serves the package at the
-# prefix path. This check catches that.
+# check-single-source.sh — fails CI if two different go.mod files declare the
+# exact same module path. That's the only state Go's loader treats as truly
+# ambiguous — nested module paths (e.g. root `github.com/foo/bar` and submodule
+# `github.com/foo/bar/baz/v2`) are fine, because each go.mod creates a hard
+# boundary that the loader respects.
 
 set -uo pipefail
 
-# Collect every submodule's declared module path.
-declare -a paths=()
-for gomod in $(find . -name go.mod -not -path '*/vendor/*' 2>/dev/null); do
-  mod_path=$(grep '^module' "$gomod" | head -1 | awk '{print $2}' || true)
-  [ -z "$mod_path" ] && continue
-  paths+=("$mod_path|$gomod")
-done
-
+declare -A SEEN=()
 fail=0
 
-# Pairwise: for each pair (a, b) where a != b, check that neither is a prefix of the other.
-n=${#paths[@]}
-for ((i=0; i<n; i++)); do
-  a_path="${paths[$i]%%|*}"
-  a_file="${paths[$i]##*|}"
-  for ((j=i+1; j<n; j++)); do
-    b_path="${paths[$j]%%|*}"
-    b_file="${paths[$j]##*|}"
+while IFS= read -r gomod; do
+  mod_path=$(grep '^module' "$gomod" | head -1 | awk '{print $2}' || true)
+  [ -z "$mod_path" ] && continue
 
-    if [ "$a_path" = "$b_path" ]; then
-      echo "::error::Duplicate module path '$a_path' declared in:"
-      echo "    $a_file"
-      echo "    $b_file"
-      fail=1
-      continue
-    fi
-
-    case "$a_path" in
-      "$b_path"/*)
-        echo "::error::Module path '$a_path' is nested under '$b_path' — ambiguous package resolution."
-        echo "    $a_file"
-        echo "    $b_file"
-        fail=1
-        ;;
-    esac
-    case "$b_path" in
-      "$a_path"/*)
-        echo "::error::Module path '$b_path' is nested under '$a_path' — ambiguous package resolution."
-        echo "    $a_file"
-        echo "    $b_file"
-        fail=1
-        ;;
-    esac
-  done
-done
+  if [ -n "${SEEN[$mod_path]:-}" ]; then
+    echo "::error::Duplicate module path '$mod_path' declared in:"
+    echo "    ${SEEN[$mod_path]}"
+    echo "    $gomod"
+    fail=1
+  else
+    SEEN[$mod_path]="$gomod"
+  fi
+done < <(find . -name go.mod -not -path '*/vendor/*' 2>/dev/null)
 
 if [ "$fail" -ne 0 ]; then
   echo "::error::Single-source-of-truth check failed."
   exit 1
 fi
 
-echo "single-source check: OK"
+echo "single-source check: OK (${#SEEN[@]} unique module paths across the repo)"
