@@ -36,21 +36,22 @@ for gomod in modules/*/go.mod cmd/*/go.mod; do
   rm -f "${gomod}.bak"
 done
 
-echo "==> Tidying each submodule (GOWORK=off)..."
-tidy_failures=()
-for d in modules/*/ cmd/*/; do
-  [ -f "$d/go.mod" ] || continue
-  echo "    $d"
-  if ! (cd "$d" && GOWORK=off go mod tidy >/dev/null 2>&1); then
-    tidy_failures+=("$d")
-  fi
-done
-if [ "${#tidy_failures[@]}" -gt 0 ]; then
-  echo "::error::go mod tidy failed in:" >&2
-  printf '    %s\n' "${tidy_failures[@]}" >&2
-  echo "::error::Fix each module then re-run release-prep." >&2
-  exit 1
-fi
+echo "==> Skipping go mod tidy (chicken-and-egg)."
+# Tidy CANNOT run cleanly at this stage:
+# - GOWORK=off can't verify cross-submodule require lines (the $VERSION tags
+#   we're about to publish don't exist on the proxy yet).
+# - GOWORK=on (workspace) also fails, because tidy still verifies require
+#   versions against the proxy regardless of workspace-level resolution.
+#
+# The existing go.sum entries were populated correctly during dev with local
+# replace directives. Stripping replaces does not invalidate those entries
+# (they're hashes of module contents, not paths). New transitive entries
+# may be needed at consumer-tidy time, but Go populates those lazily.
+#
+# Real verification happens post-tag in .github/workflows/v2-release.yml:
+# after the tag-and-push step, the workflow runs the test-external/ consumer
+# simulation under GOWORK=off against the just-published proxy entries.
+# If anything is missing from go.sum, that step fails.
 
 echo "==> Verifying no-replaces guard..."
 bash scripts/check-no-replaces.sh
