@@ -16,7 +16,6 @@ declare -A TIER=(
   [ssh]=1
   [http-helper]=1
   [dns-helper]=1
-  [version-checker]=1
   [docker]=2
   [packer]=2
   [database]=2
@@ -31,6 +30,7 @@ declare -A TIER=(
   [terraform]=4
   [terragrunt]=4
   [test-structure]=4
+  [version-checker]=4
 )
 
 fail=0
